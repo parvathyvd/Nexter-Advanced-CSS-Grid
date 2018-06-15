@@ -1,4 +1,67 @@
 .header{
     background: yellow;
     grid-column: full-start/ col-end 6;
+    background-image: linear-gradient(rgba($color-secondary, .93),rgba($color-secondary, .93)), url(../img/hero.jpeg);
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    grid-template-rows: 1fr min-content minmax(min-content, 6rem) 1fr;
+    grid-template-columns: mimmax(min-content max-content);
+    grid-row-gap: 2.5rem;
+    padding: 8rem;
+    padding-top: 4rem;
+    justify-content: center;
+
+    @media only screen and (max-width: $medium){
+        grid-column: full-start/ full-end;
+ 
+    }
+
+    @media only screen and (max-width: $small){
+        padding: 5rem;
+
+    }
+
+    &__btn{
+        align-self: start;
+        justify-self: start;
+    }
+    &__logo{
+        height: 3rem;
+    }
+    &__seen-text{
+        display: grid;
+        font-size: 1.6rem;
+        color: $color-grey-light-2;
+        grid-template-columns: 1fr max-content 1fr;
+        grid-column-gap: .5rem;
+        align-items: center;
+
+        &::after,&::before{
+            content: '';
+            height: 1px;
+            display: block;
+            background: currentColor; 
+        }
+
+        &::after{
+
+        }
+        &::before{
+
+        }
+    }
+    &__seen-logos{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: 3rem;
+        justify-items: center;
+        align-items: center;
+
+        img{
+            max-height: 2.5rem;
+            max-width: 100%;
+            filter: brightness(70%);
+        }
+    }
 }
